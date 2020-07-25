@@ -13,4 +13,8 @@ class Ad extends Model
     public function tenants() {
         return $this->hasMany('App\Tenant');
     }
+
+    public function savedTenants() {
+        return $this->belongsToMany('App\Tenant')->withTimestamps();
+    }
 }

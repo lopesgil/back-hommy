@@ -70,4 +70,23 @@ class TenantController extends Controller
         $tenant = Tenant::findOrFail($id);
         return response()->json($tenant->ad);
     }
+
+    public function saveAd($id, $ad_id) {
+        $tenant = Tenant::findOrFail($id);
+        $ad = Ad::findOrFail($ad_id);
+        $tenant->savedAds()->attach($ad_id);
+        return response()->json($tenant->savedAds);
+    }
+
+    public function unsaveAd($id, $ad_id) {
+        $tenant = Tenant::findOrFail($id);
+        //$ad = Ad::findOrFail($ad_id);
+        $tenant->savedAds()->detach($ad_id);
+        return response()->json($tenant->savedAds);
+    }
+
+    public function showSavedAds($id) {
+        $tenant = Tenant::findOrFail($id);
+        return response()->json($tenant->savedAds);
+    }
 }

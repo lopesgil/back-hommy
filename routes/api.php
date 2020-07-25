@@ -44,9 +44,14 @@ Route::put('chooseAd/{id}/{ad_id}', 'TenantController@chooseAd');
 Route::put('unchooseAd/{id}', 'TenantController@unchooseAd');
 Route::get('showChoosedAd/{id}', 'TenantController@showChoosedAd');
 
+Route::post('saveAd/{id}/{ad_id}', 'TenantController@saveAd');
+Route::delete('unsaveAd/{id}/{ad_id}', 'TenantController@unsaveAd');
+Route::get('showSavedAds/{id}', 'TenantController@showSavedAds');
+
 // Rotas de relacionamento do locador
 Route::get('showPostedAds/{id}', 'LandlordController@showPostedAds');
 
 //Rotas de relacionamento do anúncio
 Route::get('showAdLandlord/{id}', 'AdController@showAdLandlord');
 Route::get('showAdTenants/{id}', 'AdController@showAdTenants');
+Route::get('showSavedTenants/{id}', 'AdController@showSavedTenants');

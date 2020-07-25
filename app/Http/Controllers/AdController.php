@@ -78,4 +78,9 @@ class AdController extends Controller
         $ad = Ad::findOrFail($id);
         return response()->json([$ad->tenants]);
     }
+
+    public function showSavedTenants($id) {
+        $ad = Ad::findOrFail($id);
+        return response()->json($ad->savedTenants);
+    }
 }
