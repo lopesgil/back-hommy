@@ -23,9 +23,9 @@ class TenantController extends Controller
         return response()->json($tenant);
     }
 
-    public function listTenant() {
-        $tenant = Tenant::all();
-        return response()->json([$tenant]);
+    public function listTenants() {
+        $tenants = Tenant::all();
+        return response()->json([$tenants]);
     }
 
     public function updateTenant(Request $request, $id) {
