@@ -48,7 +48,7 @@ class TenantController extends Controller
     
     public function deleteTenant($id) {
         Tenant::destroy($id);
-        return respone()->json(['Locatário deletado']);
+        return response()->json(['Locatário deletado']);
     }
 
     public function chooseAd($id, $ad_id) {

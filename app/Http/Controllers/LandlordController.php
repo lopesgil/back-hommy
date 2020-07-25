@@ -47,6 +47,8 @@ class LandlordController extends Controller
             $landlord->email = $request->email;
         }
 
+        $landlord->save();
+        return response()->json($landlord);
     }
     
     public function deleteLandlord($id) {
