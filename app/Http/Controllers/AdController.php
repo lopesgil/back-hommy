@@ -68,4 +68,14 @@ class AdController extends Controller
         Ad::destroy($id);
         return response()->json(['Anúncio deletado']);
     }
+
+    public function showAdLandlord($id) {
+        $ad = Ad::findOrFail($id);
+        return response()->json($ad->landlord);
+    }
+
+    public function showAdTenants($id) {
+        $ad = Ad::findOrFail($id);
+        return response()->json([$ad->tenants]);
+    }
 }

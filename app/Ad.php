@@ -11,6 +11,6 @@ class Ad extends Model
     }
 
     public function tenants() {
-        return $this->hasMany('App\Tenants');
+        return $this->hasMany('App\Tenant');
     }
 }

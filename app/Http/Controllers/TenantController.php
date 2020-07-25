@@ -65,4 +65,9 @@ class TenantController extends Controller
         $tenant->save();
         return response()->json($tenant);
     }
+
+    public function showChoosedAd($id) {
+        $tenant = Tenant::findOrFail($id);
+        return response()->json($tenant->ad);
+    }
 }

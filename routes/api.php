@@ -42,3 +42,11 @@ Route::delete('deleteTenant/{id}', 'TenantController@deleteTenant');
 // Rotas de relacionamento do locatário
 Route::put('chooseAd/{id}/{ad_id}', 'TenantController@chooseAd');
 Route::put('unchooseAd/{id}', 'TenantController@unchooseAd');
+Route::get('showChoosedAd/{id}', 'TenantController@showChoosedAd');
+
+// Rotas de relacionamento do locador
+Route::get('showPostedAds/{id}', 'LandlordController@showPostedAds');
+
+//Rotas de relacionamento do anúncio
+Route::get('showAdLandlord/{id}', 'AdController@showAdLandlord');
+Route::get('showAdTenants/{id}', 'AdController@showAdTenants');

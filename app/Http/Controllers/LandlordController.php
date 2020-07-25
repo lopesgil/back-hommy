@@ -55,5 +55,11 @@ class LandlordController extends Controller
         Landlord::destroy($id);
         return response()->json(['Locador deletado']);
     }
+
+    public function showPostedAds($id) {
+        $landlord = Landlord::findOrFail($id);
+        return response()->json([$landlord->ads]);
+    }
 }
+
 

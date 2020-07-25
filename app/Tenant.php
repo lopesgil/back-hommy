@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tenant extends Model
 {
-    public function chosen_ad() {
+    public function ad() {
         return $this->belongsTo('App\Ad');
     }
 }
